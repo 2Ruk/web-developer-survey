@@ -19,6 +19,11 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  {
+    path: "/result",
+    name: "Result",
+    component: QuestionView,
+  }
 ];
 
 const router = new VueRouter({

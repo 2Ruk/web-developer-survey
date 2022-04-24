@@ -25,7 +25,6 @@
         <!--          readonly-->
         <!--          size="14"-->
         <!--        ></v-rating>-->
-
         <!--        <div class="grey&#45;&#45;text ms-4">4.5 (413)</div>-->
       </v-row>
 
