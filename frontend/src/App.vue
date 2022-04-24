@@ -16,9 +16,9 @@ import MainLayout from "@/components/common-survey/MainLayout.vue";
 
 @Component({
   components: {
+    QuestionView,
     MainLayout,
     Header,
-    QuestionView,
   },
 })
 export default class App extends Vue {
