@@ -105,8 +105,11 @@ export default class QuestionView extends Vue {
   }
 
   async getLoadTest() {
+    console.log('test')
     const { data } = await this.axios.get("/survey");
+    console.log(data)
     this.message = data;
+    console.log(this.message)
   }
 
   reserve() {
