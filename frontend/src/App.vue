@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Header />
-    <MainLayout>
+    <MainLayout v-if="isQuestion">
       <router-view />
     </MainLayout>
   </v-app>
@@ -21,8 +21,18 @@ import MainLayout from "@/components/common-survey/MainLayout.vue";
     QuestionView,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
 
+  isQuestion: boolean = false;
+
+  created(){
+    const isQuestion = this.$route.name === 'Question';
+    this.isQuestion = !isQuestion
+
+    // console.log(this.$route.name)
+  }
+
+}
 // export default Vue.extend({
 //   name: "App",
 //   components: { Header },
