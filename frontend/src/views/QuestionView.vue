@@ -16,20 +16,6 @@
     <v-card-title>{{ questionTitle }}</v-card-title>
 
     <v-card-text>
-      <v-row align="center" class="mx-0">
-        <!--        <v-rating-->
-        <!--          :value="4.5"-->
-        <!--          color="amber"-->
-        <!--          dense-->
-        <!--          half-increments-->
-        <!--          readonly-->
-        <!--          size="14"-->
-        <!--        ></v-rating>-->
-        <!--        <div class="grey&#45;&#45;text ms-4">4.5 (413)</div>-->
-      </v-row>
-
-      <!--      <div class="my-4 text-subtitle-1">$ • Italian, Cafe</div>-->
-
       <div class="my-4 text-subtitle-1 pa-2">
         <v-alert outlined color="primary">
           <div class="text-h6">Description</div>
@@ -40,24 +26,12 @@
 
     <v-divider class="mx-4"></v-divider>
 
-    <!--    <v-card-title>Tonight's availability</v-card-title>-->
     <v-card-text>
       <v-radio-group v-model="questionInfo.value" column>
         <v-radio label="1. 예" value="radio-1"></v-radio>
         <v-radio label="2. 아니오" value="radio-2"></v-radio>
       </v-radio-group>
     </v-card-text>
-
-    <!--    <v-card-text>-->
-    <!--      <v-chip-group-->
-    <!--        v-model="questionInfo.value"-->
-    <!--        active-class="deep-purple accent-4 white&#45;&#45;text"-->
-    <!--        column-->
-    <!--      >-->
-    <!--        <v-chip>1. 네(Y)</v-chip>-->
-    <!--        <v-chip>2. 아니오(N)</v-chip>-->
-    <!--      </v-chip-group>-->
-    <!--    </v-card-text>-->
 
     <v-divider class="mx-4"></v-divider>
 
@@ -73,18 +47,15 @@
 </template>
 
 <script lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue";
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({
   components: {
-    HelloWorld,
   },
 })
 export default class QuestionView extends Vue {
   private message: string = "";
   private loading: boolean = false;
-  private selection: number = 0;
   private questionInfo = {
     qName: "Q1",
     title: "안녕하세요 귀하께서는 웹 개발자 이신가요?",
@@ -96,6 +67,11 @@ export default class QuestionView extends Vue {
     value: null,
   };
 
+  created(){
+    const routerName = this.$route.name
+    console.log(routerName)
+  }
+
   get questionTitle(): string {
     return `${this.questionInfo.qName}. ${this.questionInfo.title} `;
   }
@@ -105,11 +81,8 @@ export default class QuestionView extends Vue {
   }
 
   async getLoadTest() {
-    console.log('test')
-    const { data } = await this.axios.get("/survey");
-    console.log(data)
+    const { data } = await this.axios.get(`/survey`);
     this.message = data;
-    console.log(this.message)
   }
 
   reserve() {

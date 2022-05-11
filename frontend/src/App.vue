@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Header />
-    <MainLayout v-if="isQuestion">
+    <MainLayout >
       <router-view />
     </MainLayout>
   </v-app>
