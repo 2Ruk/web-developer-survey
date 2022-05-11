@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-main class="grey lighten-3">
+    <v-main class=" lighten-2">
       <v-container>
         <v-row align="center" justify="center">
           <v-col cols="12" sm="10">
@@ -19,5 +19,3 @@ export default {
   name: "MainLayout",
 };
 </script>
-
-<style scoped></style>

@@ -1,17 +1,13 @@
 <template>
-  <v-card :loading="loading" class="mx-auto my-12">
-    <template slot="progress">
+  <v-card outlined elevation="2" :loading="loading" class="mx-auto my-12" >
+    <template #progress>
       <v-progress-linear
         color="deep-purple"
-        height="10"
+        height="20"
         indeterminate
       ></v-progress-linear>
     </template>
 
-    <v-img
-      height="5"
-      src="https://media.giphy.com/media/xT0xeMP0P5q2jE4wkE/giphy.gif"
-    ></v-img>
 
     <v-card-title>{{ questionTitle }}</v-card-title>
 
