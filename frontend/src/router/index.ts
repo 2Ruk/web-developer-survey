@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import QuestionView from "../views/QuestionView.vue";
 import Home from "@/views/Home.vue";
+import ResultView from "@/views/ResultView.vue";
 
 Vue.use(VueRouter);
 
@@ -19,7 +20,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/result",
     name: "Result",
-    component: QuestionView,
+    component: ResultView,
   },
 ];
 
