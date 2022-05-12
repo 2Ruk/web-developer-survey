@@ -62,12 +62,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-
 @Component({
   components: {
   },
 })
 export default class ResultView extends Vue {
-  sticky: boolean =  true;
 }
 </script>
